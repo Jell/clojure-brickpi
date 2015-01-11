@@ -25,15 +25,16 @@
            :padding 2
            ))
 
-(->> (encode msg-frame
-            {:type 3
-             :offset1 false
-             :offset2 false
-             :m1-speed 255
-             :m1-direction true
-             :m1-running? true
-             :m2-speed 255
-             :m2-direction true
-             :m2-running? true
-             :padding 0})
-     (write port))
+(defn doit []
+  (->> (encode msg-frame
+               {:type 3
+                :offset1 false
+                :offset2 false
+                :m1-speed 255
+                :m1-direction true
+                :m1-running? true
+                :m2-speed 255
+                :m2-direction true
+                :m2-running? true
+                :padding 0})
+       (write port)))
